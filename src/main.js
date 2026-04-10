@@ -46,12 +46,16 @@ form.addEventListener('submit', async e => {
     totalHits = data.totalHits;
 
     createGallery(data.hits);
-    showLoadMoreButton();
+
+    const totalPages = Math.ceil(totalHits / 15);
+
+    if (totalPages > 1) {
+      showLoadMoreButton();
+    }
   } catch (error) {
     iziToast.error({ message: 'Something went wrong!' });
   } finally {
     hideLoader();
-    form.reset();
   }
 });
 
