@@ -77,6 +77,17 @@ body {
   display: block;
 }
 
+.gallery-item {
+  transition:
+    transform 250ms ease,
+    box-shadow 250ms ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
 .info {
   display: flex;
   justify-content: space-around;
